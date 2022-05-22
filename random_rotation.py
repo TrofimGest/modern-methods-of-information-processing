@@ -14,3 +14,5 @@ def random_rotation(img):
     rotated = cv2.warpAffine(img, M, (width, height))
     cv2.imshow("Rotated image", rotated)
     cv2.waitKey(0)
+
+# исправление пул реквеста
