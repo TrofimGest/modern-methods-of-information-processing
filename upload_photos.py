@@ -1,5 +1,6 @@
 import os
 
+
 # 1 - i search imgs in current folder, if i need more imgs i search folders in folder and search imgs in them
 
 def findDirsInFolder(folder):
