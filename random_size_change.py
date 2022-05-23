@@ -14,7 +14,5 @@ def random_resize(img):
  
     print('Resized Dimensions : ',resized.shape)
  
-    #cv2.imshow("Resized image", resized)
-    #cv2.waitKey(0)
-    #cv2.destroyAllWindows()
     return resized
+# pr
