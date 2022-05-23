@@ -12,7 +12,8 @@ def random_rotation(img):
     # повернем изображение на 180 градусов
     M = cv2.getRotationMatrix2D(center, angle, 1.0)
     rotated = cv2.warpAffine(img, M, (width, height))
-    cv2.imshow("Rotated image", rotated)
-    cv2.waitKey(0)
+    # cv2.imshow("Rotated image", rotated)
+    # cv2.waitKey(0)
+    return rotated
 
 # исправление пул реквеста
