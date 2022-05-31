@@ -1,5 +1,8 @@
 from PIL import Image
 from random import randint
+from saving_photo import saving_photo
+import os
+import cv2
 
 # pip install Pillow
 
@@ -43,8 +46,13 @@ def random_img_on_img(paste_image_path):
 
         i = i + 1
 
-
     back_im.save('res.jpg')
+
+    img = cv2.imread('res.jpg')
+    
+    saving_photo([img])
+
+    os.remove('res.jpg')
 
     img_paste.close()
     img_bg.close()

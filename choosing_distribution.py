@@ -34,6 +34,3 @@ def choosing_distribution(distribution, type):
 
     distribution_parameter = mean(distribution_array)
     return round(distribution_parameter)
-
-
-# print(choosing_distribution('normal', 'rotation'))

@@ -29,6 +29,7 @@ def getNPhotos(count):
         for file in dirs:
             newImages = findPhotosInFolder(os.path.join(currentFolder, file))
             if(foundCountOfPhotos + len(newImages) == count):
+                images = images+ newImages
                 return images
             elif(foundCountOfPhotos + len(newImages) > count):
                 weNeed = count - foundCountOfPhotos

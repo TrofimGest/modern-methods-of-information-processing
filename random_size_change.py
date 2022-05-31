@@ -1,12 +1,12 @@
 import cv2
-from random import randint
+from choosing_distribution import choosing_distribution
 
 def random_resize(img):
     print('Original Dimensions : ',img.shape)
 
-    scale_percent = randint(20, 90) # percent of original size
-    width = int(img.shape[1] * scale_percent / 100)
-    height = int(img.shape[0] * scale_percent / 100)
+    devide = choosing_distribution('exponential', 'size') # percent of original size
+    width = int(img.shape[1] / devide)
+    height = int(img.shape[0] / devide)
     dim = (width, height)
   
     # resize image
@@ -15,4 +15,3 @@ def random_resize(img):
     print('Resized Dimensions : ',resized.shape)
  
     return resized
-# pr
