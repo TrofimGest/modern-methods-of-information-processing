@@ -6,7 +6,7 @@ def findDirsInFolder(folder):
     dirs=[]
     content = os.listdir(folder)
     for file in content:
-        if os.path.isdir(os.path.join(folder, file)) and file != ".git" and file != ".idea" and file != "__pycache__":
+        if os.path.isdir(os.path.join(folder, file)) and file != ".git" and file != ".idea" and file != "__pycache__" and file != "backgrounds" and file != "photos":
             dirs.append(file)
     return dirs
 

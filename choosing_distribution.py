@@ -33,7 +33,7 @@ def choosing_distribution(distribution, type):
         distribution_array = np.random.uniform(low, high, size=1)
 
     distribution_parameter = mean(distribution_array)
-    print(round(distribution_parameter))
+    return round(distribution_parameter)
 
 
-choosing_distribution('normal', 'rotation')
+# print(choosing_distribution('normal', 'rotation'))

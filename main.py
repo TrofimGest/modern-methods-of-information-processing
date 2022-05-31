@@ -8,23 +8,23 @@ from img_on_img import random_img_on_img
 
 from random import randint
 
-test = getNPhotos(4)
-start = 0
-end = 4
-for img in test:
-    if(start != end):
-        testImg = test[start]
-        currentImg = cv2.imread(testImg)
-        result = random_rotation(random_resize(random_change_color(currentImg)))
-        cv2.imshow("Result image", result)
-        cv2.waitKey(0)
-        name = randint(1,359)
-        isSave = saving_photo(result, str(name), 'jpg')
-        print(isSave)
-        start = start + 1
+# test = getNPhotos(5)
+# start = 0
+# end = 5
+# for img in test:
+#     if(start != end):
+#         testImg = test[start]
+#         currentImg = cv2.imread(testImg)
+#         result = random_rotation(random_resize(random_change_color(currentImg)))
+#         cv2.imshow("Result image", result)
+#         cv2.waitKey(0)
+#         name = randint(1,359)
+#         isSave = saving_photo(result, str(name), 'jpg')
+#         print(isSave)
+#         start = start + 1
 
 
-random_img_on_img(test[3])
+random_img_on_img('test/mem.jpg')
 
 # print(test)
 # img = cv2.imread(testImg)
