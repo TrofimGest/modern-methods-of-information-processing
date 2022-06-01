@@ -6,7 +6,7 @@ from random_size_change import random_resize
 from saving_photo import saving_photo
 from img_on_img import random_img_on_img
 from get_outline import get_outline
-
+from random_color_channels_change import random_color_channels_change
 test = getNPhotos(7)
 start = 0
 end = len(test)
@@ -47,6 +47,11 @@ saving_photo([bg_result])
 # color = random_change_color(img)
 # cv2.imshow("Changed color image", color)
 # cv2.waitKey(0)
+
+color_channels_change = random_color_channels_change(img)
+cv2.imshow("Changed color channels image", color_channels_change)
+saving_photo([color_channels_change])
+cv2.waitKey(0)
 
 # result = random_rotation(random_resize(random_change_color(img)))
 # cv2.imshow("Result image", result)
