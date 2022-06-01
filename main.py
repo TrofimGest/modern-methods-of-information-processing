@@ -16,7 +16,8 @@ for img in test:
     if(start != end):
         testImg = test[start]
         currentImg = cv2.imread(testImg)
-        result = random_rotation(random_resize(random_change_color(currentImg)))
+        result = random_rotation(random_resize(
+            random_change_color(currentImg)))
         cv2.imshow("Result image", result)
         cv2.waitKey(0)
         photos.append(result)
@@ -31,7 +32,7 @@ bg = cv2.imread('backgrounds/blackBackground.jpg')
 bg_result = get_outline(img, bg)
 saving_photo([bg_result])
 
-# img = cv2.imread('test/mem.jpg')
+img = cv2.imread('test/mem.jpg')
 
 # cv2.imshow("Origin image", img)
 # cv2.waitKey(0)

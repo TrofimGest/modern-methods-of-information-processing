@@ -8,13 +8,11 @@ def random_color_channels_change(img):
 
     r, g, b = cv2.split(img2)
 
-    number = choosing_distribution('uniform', 'rotation')
+    r = r + choosing_distribution('exponential', 'rotation')
 
-    r = r + number
+    g = g + choosing_distribution('normal', 'rotation')
 
-    g = g + number
-
-    b = b + number
+    b = b + choosing_distribution('uniform', 'rotation')
 
     color_channels_change = cv2.merge([r, g, b])
 
