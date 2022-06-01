@@ -1,6 +1,11 @@
 from PIL import Image
 from random import randint
 from saving_photo import saving_photo
+from random_rotation import random_rotation
+from random_change_color import random_change_color
+from upload_photos import getNPhotos
+from random_size_change import random_resize
+from saving_photo import saving_photo
 import os
 import cv2
 
@@ -23,6 +28,12 @@ def random_img_on_img(paste_image_path):
 
     i = 0
     while i < pasteImgNumber:
+
+        currentImg = cv2.imread(paste_image_path)
+        result = random_rotation(random_resize(random_change_color(currentImg)))
+        cv2.imwrite('res1.jpg', result)
+        img_paste = Image.open('res1.jpg')
+
         devideOn = randint(4,10)
         fixed_width = int(bd_width/devideOn)
 
@@ -33,7 +44,7 @@ def random_img_on_img(paste_image_path):
         # меняем размер на полученные значения
         new_image = img_paste.resize((fixed_width, height_size))
 
-        new_paste_width, new_paste_height = new_image.size
+        # new_paste_width, new_paste_height = new_image.size
         
         if(i==0):
             x=0
@@ -43,6 +54,8 @@ def random_img_on_img(paste_image_path):
             y = y + round(ky)
 
         back_im.paste(new_image, (x,y))
+
+        os.remove('res1.jpg')
 
         i = i + 1
 
